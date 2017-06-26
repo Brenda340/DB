@@ -1,5 +1,5 @@
 --this is a comment
-REPLACE PROCEDURE C##ELI.Loopproc (INVAL NUMBER, N NUMBER)
+CREATE OR REPLACE PROCEDURE C##ELI.Loop (INVAL NUMBER, N NUMBER)
 IS
     TMPVAR    NUMBER;
     TMPVAR2   NUMBER;
@@ -27,6 +27,6 @@ BEGIN
 
     DBMS_OUTPUT.PUT_LINE ('TOTAL IS' || TO_CHAR (TOTAL));
 
-END Loopproc;
+END Loop;
 --this is a comment and
 --this is ither comment
