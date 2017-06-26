@@ -5,7 +5,7 @@ IS
     TOTAL     NUMBER;
 BEGIN
 
-    TMPVAR := 0;
+    TMPVAR := 1;
 
     TMPVAR2 := 0;
 
@@ -28,3 +28,5 @@ BEGIN
 
 END Loopproc;
 --this is a comment and
+--this is ither comment
+/
