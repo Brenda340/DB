@@ -5,7 +5,7 @@ IS
     TOTAL     NUMBER;
 BEGIN
 
-    TMPVAR := 0;
+    TMPVAR := 1;
 
     TMPVAR2 := 0;
 
