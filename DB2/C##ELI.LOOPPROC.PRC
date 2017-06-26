@@ -27,5 +27,6 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE ('TOTAL IS' || TO_CHAR (TOTAL));
 
 END Loopproc;
---this is a comment
+--this is a comment and
+--this is ither comment
 /
