@@ -1,18 +1,17 @@
-CREATE OR REPLACE function C##ELI.custom_hash (p_username in varchar2, p_password in varchar2)
-return varchar2
-is
-  l_password varchar2(4000);
-  l_salt varchar2(4000) := '5GS5RXD3KGPAF0US0VTEN616538F0J';
-begin
-
--- This function should be wrapped, as the hash algorhythm is exposed here.
--- You can change the value of l_salt or the method of which to call the
--- DBMS_OBFUSCATOIN toolkit, but you much reset all of your passwords
--- if you choose to do this.
-
-l_password := utl_raw.cast_to_raw(dbms_obfuscation_toolkit.md5
-  (input_string => p_password || substr(l_salt,10,13) || p_username ||
-    substr(l_salt, 4,10)));
-return l_password;
-end;
+CREATE OR REPLACE FUNCTION C##ELI.custom_hash (p_username   IN VARCHAR2,
+                                        p_password   IN VARCHAR2)
+   RETURN VARCHAR2
+IS
+   l_password   VARCHAR2 (4000):=p_password;
+   l_salt       VARCHAR2 (4000) := p_username;
+BEGIN
+   l_password :=
+      UTL_RAW.cast_to_raw (
+         DBMS_OBFUSCATION_TOOLKIT.md5 (
+            input_string   =>    p_password
+                              || SUBSTR (l_salt, 10, 13)
+                              || p_username
+                              || SUBSTR (l_salt, 4, 10)));
+   RETURN l_password;
+END;
 /
